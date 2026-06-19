@@ -266,8 +266,10 @@ document.querySelectorAll(".sample-buttons button").forEach((button) => {
 });
 
 async function analyzeWithAI(text) {
+  const API_URL = "https://scamcheck-2-07zf.onrender.com";
+
   try {
-    const response = await fetch("/analyze", {
+    const response = await fetch(`${API_URL}/analyze`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ message: text }),
